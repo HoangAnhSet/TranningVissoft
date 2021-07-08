@@ -43,5 +43,5 @@ void * do_thread(void * data)
 {
     int i, res;
     res = pthread_setcancelstate (PTHREAD_CANCEL_ENABLE,NULL);
-    ứ
+
 }

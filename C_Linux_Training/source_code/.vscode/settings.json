@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "*.sh": "bat",
-        "semaphore.h": "c"
-    }
+        "semaphore.h": "c",
+        "unistd.h": "c",
+        "sem.h": "c"
+    },
+    "files.autoSave": "afterDelay"
 }
