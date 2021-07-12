@@ -3,7 +3,8 @@
         "*.sh": "bat",
         "semaphore.h": "c",
         "unistd.h": "c",
-        "sem.h": "c"
+        "sem.h": "c",
+        "shm_com.h": "c"
     },
     "files.autoSave": "afterDelay"
 }

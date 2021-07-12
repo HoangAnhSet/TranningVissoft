@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.sh": "bat",
+        "stdata.h": "c",
+        "math.h": "c"
+    }
+}

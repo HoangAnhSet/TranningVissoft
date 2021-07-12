@@ -16,18 +16,18 @@ int main()
     int shmid;
     //Khoi tao
     // srand((unsigned int)getpid());
-    shmid = shmget((key_t)1234, sizeof(struct shared_use_st), 0666 | IPC_CREAT);
+    shmid = shmget((key_t)1235, sizeof(struct shared_use_st), 0666 | IPC_CREAT);
     // if (shmid == -1)
     // {
     //     fprintf(stderr, " shmeget failed\n");
     //     exit(EXIT_FAILURE);
     // }
     shared_memory = shmat(shmid, (void *)0, 0);
-    if (shared_memory == (void *)-1)
-    {
-        fprintf(stderr, "shmat failed \n");
-        exit(EXIT_FAILURE);
-    }
+    // if (shared_memory == (void *)-1)
+    // {
+    //     fprintf(stderr, "shmat failed \n");
+    //     exit(EXIT_FAILURE);
+    // }
     //xong khoi tao
     printf("Memory attached at %X\n", (int)shared_memory);
     shared_stuff = (struct shared_use_st *)shared_memory;

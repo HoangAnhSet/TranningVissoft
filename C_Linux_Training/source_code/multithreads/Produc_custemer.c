@@ -13,7 +13,7 @@ int main()
     int res, i;
     pthread_t a_thread;
     void *thread_result;
-    res = sem_init(&semaphore, 0, 0);
+    res = sem_init(&semaphore, 0, 2);
     if (res != 0)
     {
         perror("Semaphore init error");
