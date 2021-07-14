@@ -1,34 +1,32 @@
-#include <stdio.h>
-#include <stdlib.h>
-void swap(int *a, int *b)
+
+#include<stdio.h>
+#include<stdbool.h>
+
+#define N 10
+int main(void)
 {
-    int tmp;
-    tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
-
-int main()
-{
-    int num, *arr, i;
-    scanf("%d", &num);
-    arr = malloc(num * sizeof(int));
-    for (i = 0; i < num; i++)
+    
+    bool digit_seen[N]={false};
+    int digit;
+    long n;
+    printf("Enter a number:");
+    scanf("%ld",&n);
+    while(n>0)
     {
-        scanf("%d", arr + i);
+        digit =n%10;
+        if(digit_seen[digit])
+        {
+            break;
+        }
+        digit_seen[digit]=true;
+        n/10;
     }
-
-    for(int i=0;i<num/2;i++)
+    if(n>0)
     {
-        swap(arr+i,arr+num-i-1);
+        printf("Repeated digit\n");
     }
-    for (i = 0; i < num; i++)
-        printf("%d ", *(arr + i));
-
+    else{
+        printf("No repeated digit\n");
+    }
     return 0;
 }
-// test case
-/*
-8
-15 5 16 15 17 11 5 11 
-*/
