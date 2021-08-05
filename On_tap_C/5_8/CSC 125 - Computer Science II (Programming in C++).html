@@ -1,0 +1,1988 @@
+
+<!-- saved from url=(0074)http://www.csit.parkland.edu/~dbock/Class/csc125/Lecture/Constructors.html -->
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 12">
+<meta name="Originator" content="Microsoft Word 12">
+<link rel="File-List" href="http://www.csit.parkland.edu/~dbock/Class/csc125/Lecture/Constructors_files/filelist.xml">
+<title>CSC 125 - Computer Science II (Programming in C++)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>David P. Bock</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>David</o:LastAuthor>
+  <o:Revision>228</o:Revision>
+  <o:TotalTime>260</o:TotalTime>
+  <o:Created>2006-02-24T23:21:00Z</o:Created>
+  <o:LastSaved>2010-10-11T23:50:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1352</o:Words>
+  <o:Characters>7710</o:Characters>
+  <o:Company>NCSA</o:Company>
+  <o:Lines>64</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9044</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel="themeData" href="http://www.csit.parkland.edu/~dbock/Class/csc125/Lecture/Constructors_files/themedata.thmx">
+<link rel="colorSchemeMapping" href="http://www.csit.parkland.edu/~dbock/Class/csc125/Lecture/Constructors_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 1107304683 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#663366;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#000099;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]-->
+<meta name="Author" content="David P. Bock">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="11266">
+  <o:colormenu v:ext="edit" fillcolor="none"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<style type="text/css" data-styled-components="FiaaB gTcftA caPIRE" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-FiaaB */
+@-webkit-keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes FiaaB{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: sc-keyframes-gTcftA */
+@-webkit-keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}@keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}
+/* sc-component-id: sc-keyframes-caPIRE */
+@-webkit-keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}@keyframes caPIRE{0%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}20%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}40%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}60%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}80%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}100%{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75);}}</style><style>
+      .glot-sub-active{
+        color: #1296ba !important;
+      }
+      
+      .glot-sub-hovered{
+        color: #1296ba !important;
+      }
+      .glot-sub-clzz{
+        cursor: pointer;
+        
+        lineHeight: 1.2;
+          font-size: 32px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+      .glot-sub-clzz:hover{
+        color: #1296ba !important;
+      }
+      .ej-trans-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999999;
+        cursor: move;
+      }
+      .ej-trans-sub > span{
+        color: #3CF9ED;
+        font-size: 18px;
+        text-align: center;
+        padding: 0 16px;
+        line-height: 1.5;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 0 8px;
+        
+        lineHeight: 1.2;
+        font-size: 22px;
+        color: #0CB1C7; background: rgba(67, 65, 65, 0.7);
+      
+      }
+      .ej-main-sub{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999999;
+        cursor: move;
+        padding: 0 8px;
+      }
+      .ej-main-sub > span{
+        color: white;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        background: rgba(32, 26, 25, 0.8);
+        // text-shadow: 0px 1px 4px black;
+        padding: 2px 8px;
+        
+        lineHeight: 1.2;
+          font-size: 32px;
+          color: #FFCC00; background: rgba(17, 17, 17, 0.7);
+        
+      }
+
+      .ej-main-sub .glot-sub-clzz{
+        background: transparent !important
+      }
+
+      .tran-subtitle > .view-icon-edit-sub{
+        cursor: pointer;
+        padding-left: 10px;
+        top: 2px;
+        position: relative;
+      }
+
+      .tran-subtitle > .view-icon-edit-sub > svg{
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+      }
+      
+      </style></head>
+
+<body lang="EN-US" link="#663366" vlink="#000099" style="" alink="#3366FF" data-new-gr-c-s-check-loaded="14.1024.0" data-gr-ext-installed="">
+
+<div class="WordSection1">
+
+<p><b><span style="font-size:16.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">Constructors</span></b></p>
+
+<blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic">Default
+arguments</span></b><span style="font-size:10.0pt"> <br>
+</span><span style="font-size:10.0pt;color:#333333">- </span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Any C++
+function can provide default values for its input function arguments<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic">- </span></b><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic">If a
+value is not specified in a function call, the default value is assigned and
+sent to the called function<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic">- Consider the following example with
+a standard (non-class member) function<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">#include
+&lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">using
+namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">int add( int
+a=10, int b=2 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><span style="mso-spacerun:yes">&nbsp; </span>int f1 = add();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><span style="mso-spacerun:yes">&nbsp; </span>cout &lt;&lt; f1 &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">int add( int
+a, int b )<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><span style="mso-spacerun:yes">&nbsp; </span>return (a+b);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">12<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic">- When the compiler processes the add
+function it does not “see” any values provided for the two arguments<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic">- As a result, it assigns the default
+values, </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue;mso-bidi-font-style:italic">10</span><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic"> and
+</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue;
+mso-bidi-font-style:italic">2</span><span style="font-size:10.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic">, to </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:
+italic">a</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic"> and </span><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">b</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"> when calling the function<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic">- Users, however, can override the
+default values by providing their own values in the function call<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic">-</span><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> As a result, the same function
+can look very different when it is called<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>int f1 = add();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>int f2 = add( 14, 7);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>cout &lt;&lt; f1 &lt;&lt; “ “ &lt;&lt; f2 &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">12 21<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Default values are optional and not required for every
+function argument<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- For multiple arguments, however, a rule must be enforced for
+default values or the compiler might get confused<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Consider the following scenario<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">#include
+&lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">using namespace
+std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">int add( int a=10, int b );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>int f1 = add( 20 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>cout &lt;&lt; f1 &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">int add( int a, int b )<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>return (a+b);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- When the compiler encounters the function call, which argument
+(</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">a</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> or </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">b</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">)
+should it assign the value </span><span style="font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:blue">20</span><span style="font-size:10.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">?<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Should it override the value </span><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue">10</span><span style="font-size:
+10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> and assign it to </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">a</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> or
+should it be assigned to </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue">b</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">?<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Obviously, this is indeterminate and cannot be resolved by the
+compiler<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In fact, this code example will not compile and report the
+following errors<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: default argument missing for
+parameter 2 of `int add(int, int)'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">In function `int main()':<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: too few arguments to function `int
+add(int, int)'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: at this point in file<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">In function `int add(int, int)':<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: default argument missing for
+parameter 2 of `int add(int, int)'<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- To clear up the confusion, a rule is enforced when using
+default values and multiple arguments<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- All arguments <b style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-style:italic">to the right</span></b> of an argument with
+a default value <b style="mso-bidi-font-weight:normal">must</b> be specified</span><span style="font-size:10.0pt"> <br>
+</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In other words, their can be no "holes" in your default
+parameter list<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- This rule helps the compiler determine which arguments to
+assign values to in a function call<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Correcting our example according to this rule, we now have the
+following<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">#include
+&lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">using
+namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">int add( int a, int b=2 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>int f1 = add( 20 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>cout &lt;&lt; f1 &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">int add( int a, int b )<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>return (a+b);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">22<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- With this rule, values specified will be assigned to arguments
+beginning from the left<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In this example, the value </span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">20</span><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> is assigned to </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">a</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> and
+the default value </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue">2</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"> is assigned to </span><span style="font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:blue">b</span><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333;mso-bidi-font-style:italic"><o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Consider another example with an added function argument<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In this example, we have provided a default value for </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">b</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> but
+not for </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue">c<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">#include &lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">using namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">int add( int a, int b=2, int c );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><span style="mso-spacerun:yes">&nbsp; </span>int f1 = add( 20 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><span style="mso-spacerun:yes">&nbsp; </span>cout &lt;&lt; f1 &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">int add( int a, int b, int c )<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><span style="mso-spacerun:yes">&nbsp; </span>return (a+b+c);<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:italic"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Since we have not specified a value for </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">c</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">
+according to the rule, the compiler reports the following error<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:
+bold;mso-bidi-font-style:italic">error: default argument missing for parameter
+3 of 'int add(int, int, int)'<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- The rule states we must provide a default value for all
+arguments to the right of the first one with a default value<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- The first argument with a default value is </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">b</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">, so we
+must provide a default value for argument </span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">c</span><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Correcting our program, we have the following</span><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic"><o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">#include &lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">using namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">int add( int a, int b=2, int c=4 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><span style="mso-spacerun:yes">&nbsp; </span>int f1 = add( 20 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><span style="mso-spacerun:yes">&nbsp; </span>cout &lt;&lt; f1 &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">int add( int a, int b, int c )<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:
+italic"><span style="mso-spacerun:yes">&nbsp; </span>return (a+b+c);<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue;mso-bidi-font-weight:bold;mso-bidi-font-style:italic"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>26</span><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;mso-bidi-font-style:italic"><o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic">Constructors</span></b> <br>
+<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">- Special type
+of class member function</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Automatically called upon object instantiation<span style="mso-spacerun:yes">&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Same name as the class</span><span style="font-size:10.0pt"> <br>
+</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- No return type</span><span style="font-size:10.0pt"> <br>
+</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Arguments allowed, can have <b style="mso-bidi-font-weight:
+normal">default arguments<o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Consider the following class definition for a
+three-dimensional point in space<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- A constructor is defined inline (definition included with
+declaration) with default argument values<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">#include
+&lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">using
+namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">class Point<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">private:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float x, y, z;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">public:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point(float c1=0.0, float c2=0.0, float c3=0.0)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>x = c1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>y = c2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>z = c3;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>void Print()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>cout &lt;&lt; "x y z: “ &lt;&lt; x &lt;&lt; “ “ &lt;&lt; y &lt;&lt;
+“ “ &lt;&lt; z &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">};<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Constructors provide an ideal place to perform any initial
+housekeeping tasks associated with objects<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Such tasks could include allocating memory, opening files, or
+initializing state variables (as in the example above)<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Recall that constructors are <b style="mso-bidi-font-weight:
+normal">automatically called</b> when objects are instantiated<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- As a result, such initial housekeeping tasks will be performed
+when each object is declared<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- This provides an ideal mechanism for assuring that objects
+will be created correctly when called in programs<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Object declarations (or instantiations) can look different
+when using default argument values<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In the example below, two </span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">Point</span><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> objects are instantiated with
+different </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue">x,y,z</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"> values<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p1( 0.0, 2.0, 3.0 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p1.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 0.00 0.00 0.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 0.00 2.00 3.00<o:p></o:p></span></p>
+
+<p><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">-
+State variables <b style="mso-bidi-font-weight:normal">cannot</b> be
+initialized in declarations in the class definition as follows<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">#include
+&lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">using
+namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">class Point<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">private:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float x = 0.0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float y = 0.0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float z = 0.0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">public:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point(float c1=0.0, float c2=0.0, float c3=0.0)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>x = c1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>y = c2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>z = c3;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>void Print()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>cout &lt;&lt; "x y z: “ &lt;&lt; x &lt;&lt; “ “ &lt;&lt; y &lt;&lt;
+“ “ &lt;&lt; z &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">};<o:p></o:p></span></p>
+
+<p><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">-
+This code is will not compile and reports the following errors<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: ISO C++ forbids initialization of
+member `x'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: making `x' static<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: ISO C++ forbids in-class
+initialization of non-const static<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;
+</span>member `x'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: ISO C++ forbids initialization of
+member `y'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: making `y' static<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: ISO C++ forbids in-class
+initialization of non-const static<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;
+</span>member `y'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: ISO C++ forbids initialization of
+member `z'<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: making `z' static<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">error: ISO C++ forbids in-class
+initialization of non-const static<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;
+</span>member `z'</span></p>
+
+<p><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">-
+Instead, Initialization should be done in the constructor (or in functions
+called by the constructor)<o:p></o:p></span></p>
+
+<p><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic">Object Declarations</span></b><br>
+<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">-
+Constructors can be called (through object instantiation) in several different
+ways<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Consider the example below using our </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">Point</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> class<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p2( 1.0, 2.0, 3.0 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p3 = Point( 4.0, 5.0, 6.0);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point *p4 = new Point();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point *p5 = new Point( 7.0, 8.0, 9.0 );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p1.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p2.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p3.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p4-&gt;Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p5-&gt;Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 0.00 0.00 0.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 1.00 2.00 3.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 4.00 5.00 6.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 0.00 0.00 0.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 7.00 8.00 9.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in"><span style="font-family:&quot;Courier New&quot;;
+color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Note the various methods of instantiation <br>
+- The constructor for objects </span><span style="font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:blue">p1</span><span style="font-size:10.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> and </span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">p2</span><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> are implicitly called with a
+"shorthand" form<br>
+- The constructor for object </span><span style="font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:blue">p3</span><span style="font-size:10.0pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> is explicitly called with a
+"longhand" form which returns references to the object<br>
+- Note this is implied (no return type in declaration)<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Objects </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue">p4</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"> and </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue">p5</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"> are dynamically allocated using the </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">new</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">
+operator differing in default argument values<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333;
+mso-bidi-font-style:italic">Constructor Overloading</span></b><br>
+<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">-
+Multiple versions of constructor functions can be written each with the same
+name but different arguments<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- The constructor functions differ only in their input parameter
+lists (types and number of arguments)<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- This concept is referred to as <b style="mso-bidi-font-weight:
+normal">function overloading </b>and plays a key role in object-oriented
+methodologies<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- As we’ll see in detail later, function overloading can be
+applied to any type of function in C++<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Consider the following example with an extended version of the
+</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">Point</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> class<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">#include
+&lt;iostream&gt;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue;mso-bidi-font-style:italic">using
+namespace std;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">class Point<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">private:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float x,y,z;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">public:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point(float c1=0.0, float c2=0.0, float c3=0.0)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>x = c1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>y = c2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>z = c3;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point(float *c)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>x = c[0];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>y = c[1];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>z = c[2];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>void Print()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>cout &lt;&lt; "x y z: “ &lt;&lt; x &lt;&lt; “ “ &lt;&lt; y &lt;&lt;
+“ “ &lt;&lt; z &lt;&lt; endl;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">};<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In this example, we have two constructor functions differing
+by their input parameter list<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- This first constructor accepts three floating point variables
+in its parameter list<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">Point(float c1=0.0, float c2=0.0, float
+c3=0.0)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>x = c1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>y = c2;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>z = c3;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- While the second constructor accepts a pointer to an array of
+floating point variables<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">Point(float *c)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>x = c[0];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>y = c[1];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span>z = c[2];<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Objects can be constructed in different ways depending on the
+type of argument list used in a program<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- Below the first constructor is called for objects </span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue">p1</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> and</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue"> p2</span><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333"> and
+the second constructor is called for </span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">p3<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333">- In this way, constructor overloading provides class users more
+flexible ways of declaring objects<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">main()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float a = 1.0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float b = 2.0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float c = 3.0;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>float d[3] = { 4.0, 5.0, 6.0 };<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p1;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p2( a, b, c );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>Point p3( d );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p1.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p2.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><span style="mso-spacerun:yes">&nbsp;
+</span>p3.Print();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:.5in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#333333">Output<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 0.00 0.00 0.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 1.00 2.00 3.00<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt"><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue">x y z: 4.00 5.00 6.00<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#333333"><o:p>&nbsp;</o:p></span></p>
+
+<p><span style="font-size:10.0pt">&nbsp; <o:p></o:p></span></p>
+
+</blockquote>
+
+</div>
+
+
+
+
+<div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./CSC 125 - Computer Science II (Programming in C++)_files/saved_resource.html"></iframe></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
