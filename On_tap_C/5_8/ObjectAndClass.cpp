@@ -187,9 +187,190 @@ int main()
           soSanh(sinhv2,sinhv3);
 }
  */
-////////////////////////// Khái niệm ghi đè trong class//////////////////////////////////
 ////////////////////////// Khái niệm operator trong class///////////////////////////////
+// what is it ? một class là một kiểu dữ liệu, nó thể hiện cho một đối tượng.
+// các member function thể hiện hành vi của nó, operator là cho phép bạn định nghĩa cách thức 
+// thực hiện của class với các toán tử.
+/* class Time
+{
+    private:
+
+    int hours;
+    int minutes;
+
+    public:
+    Time();
+    Time(int h,int m=0);
+    void AddMin( int m);
+    void AddHr(int h);
+    void Reset(int h=0, int m=0);
+    // Time operator+(const Time & t);
+    Time operator+(const Time & t) const;
+    void Show() const;
+};
+Time::Time()
+{
+    hours=minutes=0;
+}
+
+Time::Time(int h, int m)
+{
+    hours=h;
+    minutes=m;
+}
+void Time::AddHr(int h)
+{
+   hours+=h;
+}
+void Time::AddMin(int m)
+{
+   minutes+=m;
+    hours+= minutes/60;
+    minutes%=60;  
+}
+void Time::Reset(int h, int m)
+{
+    hours=h;
+    minutes=m;
+}
+Time Time::operator+ (const Time & t) const
+{
+    Time sum;
+    sum.minutes=minutes+t.minutes;
+    sum.hours=hours+t.hours+sum.minutes;
+    sum.minutes %=60;
+    return sum;
+}
+void Time::Show()const
+{
+    cout<<hours<<" hours"<<minutes<<" minutes"<<endl;
+}
+int main()
+{
+    Time planning;
+    Time coding(2,40);
+    Time fixing(5,55);
+    Time total;
+    cout<<"planning time = ";
+    planning.Show();
+    cout<<endl;
+    cout<< "coding time = ";
+    coding.Show();
+    cout<<endl;
+    cout<<" fixing time = ";
+    fixing.Show();
+    cout<<endl;
+   // total=coding.operator+(fixing);// cách1 sử dụng toán tử
+   total=coding+fixing;// cách 2 sử dụng toán tử
+    cout<<" coding + fixing= ";
+    total.Show();
+    cout<<endl;
+} */
+////////////////////////// Khái niệm ghi đè trong class//////////////////////////////////
+
+
 ////////////////////////// Khái niệm hàm friend trong class/////////////////////////////
+// what is it?
+// How does it work ?
+// why might they nê
+class Time
+{
+    private:
+
+    int hours;
+    int minutes;
+
+    public:
+    Time();
+    Time(int h,int m=0);
+    void AddMin( int m);
+    void AddHr(int h);
+    void Reset(int h=0, int m=0);
+    // Time operator+(const Time & t);
+    Time operator+(const Time & t) const;
+    Time operator *(double m) const
+    {
+        Time result;
+        long totalminutes=hours *m * 60+ minutes*m;
+        result.hours=totalminutes/60;
+        result.minutes=totalminutes%60;
+        return result;
+    }
+    friend Time operator * (double m,Time &t)// cái này thì được
+    // friend Time operator * (const Time &t,double m)  // cái này thì không được
+    {
+        return t*m;
+    }
+    friend ostream & operator <<(ostream &os,const Time &t)
+    {
+        os<<t.hours<<" hours, "<<t.minutes<<" minutes, ";
+        return os;
+    }
+    void Show() const;
+};
+Time::Time()
+{
+    hours=minutes=0;
+}
+
+Time::Time(int h, int m)
+{
+    hours=h;
+    minutes=m;
+}
+void Time::AddHr(int h)
+{
+   hours+=h;
+}
+void Time::AddMin(int m)
+{
+   minutes+=m;
+    hours+= minutes/60;
+    minutes%=60;  
+}
+void Time::Reset(int h, int m)
+{
+    hours=h;
+    minutes=m;
+}
+Time Time::operator+ (const Time & t) const
+{
+    Time sum;
+    sum.minutes=minutes+t.minutes;
+    sum.hours=hours+t.hours+sum.minutes;
+    sum.minutes %=60;
+    return sum;
+}
+void Time::Show()const
+{
+    cout<<hours<<" hours"<<minutes<<" minutes"<<endl;
+}
+int main()
+{
+    Time planning;
+    Time coding(2,40);
+    Time fixing(5,55);
+    Time total;
+    cout<<"planning time = ";
+    planning.Show();
+    cout<<endl;
+    cout<< "coding time = ";
+    coding.Show();
+    cout<<endl;
+    cout<<" fixing time = ";
+    fixing.Show();
+    cout<<endl;
+   // total=coding.operator+(fixing);// cách1 sử dụng toán tử
+   total=coding+fixing;// cách 2 sử dụng toán tử
+    cout<<" coding + fixing= ";
+    total.Show();
+    cout<<endl;
+    // Time tmp=coding*2;
+    // Time tmp1=2*coding;
+    // cout<<" coding*2=tmp= "<<tmp<<endl;
+    // cout<<" coding*2=tmp1="<<tmp<<endl;
+
+} 
 //////////////////////// Khai niệm enumeration//////////////////////////////////////////
 // enum eggs{small, medium, large};
 // enum T_shirt{small, medium, large};
