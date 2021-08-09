@@ -273,7 +273,7 @@ int main()
 // what is it?
 // How does it work ?
 // why might they nê
-class Time
+/* class Time
 {
     private:
 
@@ -370,9 +370,10 @@ int main()
     // cout<<" coding*2=tmp= "<<tmp<<endl;
     // cout<<" coding*2=tmp1="<<tmp<<endl;
 
-} 
+}  */
 //////////////////////// Khai niệm enumeration//////////////////////////////////////////
 // enum eggs{small, medium, large};
 // enum T_shirt{small, medium, large};
 //=> bọn chúng sẽ bị xung đột
 //..=> suy ra khai niệm
+//

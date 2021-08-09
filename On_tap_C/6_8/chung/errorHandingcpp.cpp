@@ -1,3 +1,5 @@
+#include<iostream>
+using namespace std;
 /////////////////////////////////////Error Handing/////////////////////////////////////////
 // Friends-> class friend
 /* #include<iostream>
@@ -117,7 +119,40 @@ int main()
 ///////////////////////////////////// Exception///////////////////////////////////////////
 // Gặp vấn đề khi chạy nhưng vẫn phải tiếp túc.
 // Ví dụ mở một file không tồn tại
-//Hàm about()
-//
+//Hàm about()=> dùng để trả về lỗi
+///////////////////////////////////Kĩ thuật Exception////////////////////////////////////
+// +Try and catch
+/*double hmean(double a, double b);
+int main()
+{
+    double x, y, z;
+    cout<<"Enter two numbers:";
+    while(cin>>x>>y)
+    {
+        try{
+            z=hmean(x,y);
+        }
+        catch (const char *s)
+        {
+            cout<<s<<endl;
+            cout<<"Enter a new pair of number";
+            continue;
+        }
+        cout<<"Harmonic mean of "<<x<<" and "<<y<< " is "<<z<<endl;
+        cout<<"Enter nex set number or <q> to quit !"<<endl;
+    }
+    cout<<"Bye!"<<endl;
+
+}
+double hmean(double a, double b)
+{
+    if(a==-b)
+    {
+        throw "bad hmean() arguments: a=-b not allowed";
+    }
+    return 2.0 *a*b/(a+b);
+} */
+// Khái niệm hàm inline
 // Runtime type identification
+
 // Type Cast Operator
